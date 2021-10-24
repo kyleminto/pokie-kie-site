@@ -1,0 +1,85 @@
+// Sets some flex variables within one line
+
+@mixin flex-box($a: null, $j: null, $w: null, $d: null) {
+	display: flex;
+	align-items: $a;
+	justify-content: $j;
+	flex-wrap: $w;
+	flex-direction: $d;
+}
+
+// For media queries, defaults to 767px if no width defined
+
+@mixin media($w: null) {
+	@media (max-width: $w or 767px) {
+		@content;
+	}
+}
+
+// When a background image is set with PHP / HTML, this saves the !important tags each time in SCSS
+
+@mixin background-center() {
+	background-position: center center !important;
+	background-size: cover !important;
+}
+
+// For IE specific rules, hopefully shouldn't be used TOO much
+
+@mixin ie() {
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		@content;
+	}
+}
+
+// Simple size set, square if height not specified
+
+
+@mixin size($w, $h: null) {
+    width: $w;
+    height: $h or $w;
+}
+
+// Animation for the navigation links
+
+@keyframes slideIn {
+	0% {
+        opacity: 0;
+        transform: translatex(-300px);
+    }
+    35% { 
+        transform: translatex(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translatex(0);
+    }
+}
+
+// Live Breaks overlays
+
+@keyframes slideUp {
+	0% {
+        opacity: 0;
+        transform: translateY(300px);
+    }
+    35% { 
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Animation for the items that fade into view
+
+@keyframes fadeUpSlow {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

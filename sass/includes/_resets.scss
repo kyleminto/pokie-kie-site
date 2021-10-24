@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    outline: none !important;
+    -moz-appearance: initial;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+a {
+    color: $secondary;
+    &:hover {
+        text-decoration: none !important;
+    }
+}
+
+p {
+    margin: 0px;
+}
+
+// Custom function to automatically generate font sizes and line heights; remove if not required
+
+@for $i from 0 through 4 {
+    $j: #{48 - ($i * 8)}px;
+    
+    h#{$i + 1} {
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: $j;
+        line-height: $j;
+        margin: 0px;
+    }
+}
